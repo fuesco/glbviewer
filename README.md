@@ -1,3 +1,3 @@
 # gltfviewer
 
-3D Pokémon Model Viewer
+> Online preview for glTF 3D models 
