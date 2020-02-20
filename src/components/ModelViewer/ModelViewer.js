@@ -10,6 +10,7 @@ const ModelViewer = props => {
                     background-color="#ffffff"
                     shadow-intensity="1"
                     camera-controls
+                    ar
                     camera-orbit="180deg 75deg auto"
                     interaction-prompt="auto"
                     auto-rotate>
