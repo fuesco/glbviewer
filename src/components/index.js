@@ -1,8 +1,6 @@
+/*PLOP_PLACEHOLDER*/
 import ModelViewer from './ModelViewer'
-import Clock from './Clock'
-import TemporaryDrawer from './TemporaryDrawer'
 export {
+    /*PLOP_PLACEHOLDER*/
     ModelViewer,
-    Clock,
-    TemporaryDrawer,
 }

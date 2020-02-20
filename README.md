@@ -1,2 +1,3 @@
-# pokemonviewer
-3D Pokémon model viewer
+# gltfviewer
+
+3D Pokémon Model Viewer
