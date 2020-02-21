@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './App.css'
+import { makeStyles } from '@material-ui/core/styles'
 import { ModelViewer } from '../components'
 import { TopNav, Clock } from '../shared/components'
 import FileUploader from '../components/FileUploader'
@@ -8,16 +8,24 @@ import FileUploader from '../components/FileUploader'
 /* let spinLogo = () => { return (<img src={logo} className="App-logo" alt="logo" />) } */
 
 export const App = () => {
-  const [modelSrc, setModelSrc] = useState('https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?1542147958948')
+  const [lightMode, setLightMode] = useState(false)
+  const [modelSrc, setModelSrc] = useState('https://jetlaglabs.github.io/assets/model/pikachu.glb')
+  const useStyles = makeStyles(theme => ({
+    root: {
+       backgroundColor: lightMode?'#FFFFFF':'#222222',
+       textAlign: 'center',
+    },
+  }));
+  const classes = useStyles();
   const onModelUpload = (newSrc) => {
     setModelSrc(newSrc)
   }
   return (
-    <div className="App">
-      <TopNav />
+    <div className={classes.root}>
+      <TopNav onLightToggle={() => setLightMode(!!!lightMode)}/>
       <Clock />
       <FileUploader onUpload={onModelUpload}/>
-      <ModelViewer src={modelSrc} className="AstronautModel" />
+      <ModelViewer src={modelSrc} className="AstronautModel" light={lightMode}/>
     </div>
   );
 }

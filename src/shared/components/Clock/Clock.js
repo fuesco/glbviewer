@@ -8,7 +8,11 @@ import Container from '@material-ui/core/Container'
 const useStyles = makeStyles(theme => ({
     root: {
         paddingTop: '10vh',
+        paddingBottom: theme.spacing(2),
     },
+    clock: {
+        padding: theme.spacing(1),
+    }
 }));
 
 const Clock = props => {
@@ -20,7 +24,7 @@ const Clock = props => {
     )
     return (
         <Container maxWidth="sm" className={classes.root}>
-            <Paper elevation={3}>
+            <Paper elevation={3} className={classes.clock}>
                 <p>{moment(time).format('h:mm:ss a')}</p>
                 <p>{moment(time).format('dddd MMMM Do, YYYY')}</p>
             </Paper>

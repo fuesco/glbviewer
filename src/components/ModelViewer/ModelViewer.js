@@ -7,7 +7,7 @@ const ModelViewer = props => {
     <div className={styles.root}>
       <model-viewer src={props.src}
                     alt="A 3D model of an astronaut"
-                    background-color="#ffffff"
+                    background-color={props.light?"#FFFFFF":"#222222"}
                     shadow-intensity="1"
                     camera-controls
                     ar
