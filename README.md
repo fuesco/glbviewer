@@ -1,5 +1,5 @@
-# gltfviewer
+# glTFViewer
 
-Drag-and-drop preview tool for glTF 2.0 3D models.
+Drag-and-drop preview tool for glTF Binary 3D models.
 
-> Online preview for glTF 3D models 
+> https://gltfviewer.jetlaglabs.com/

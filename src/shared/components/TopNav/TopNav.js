@@ -24,44 +24,56 @@ export default function TopNav(props) {
     },
     bar: {
       backgroundColor: lightMode?'#FFFFFF':'#222222',
+      color: lightMode?'#222222':'#ffffff',
     },
     menuButton: {
-      marginRight: theme.spacing(2),
-      color: lightMode?'#222222':'#ffffff',
-    },
-    title: {
-      color: lightMode?'#222222':'#ffffff',
+      
     },
     links: {
       flexGrow: 1,
       display: 'flex',
       justifyContent: 'flex-end',
       alignItems: 'center',
-      color: lightMode?'#222222':'#ffffff',
+      columnGap: theme.spacing(2),
     },
     lightDarkToggle: {
-      marginLeft: theme.spacing(2),
+
     }
   }));
   const classes = useStyles();
   const toggleLightMode = () => {
     setLightMode(!!!lightMode);
     onLightToggle();
-
   }
   return (
     <div className={classes.root}>
       <AppBar className={classes.bar} position="fixed">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton edge="start" color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            <span role="img" aria-label="crystalball">🔮</span>&nbsp;glTFViewer
+          <Typography variant="h6">
+            glTFViewer
+            <Typography variant="overline">
+              (0.0.2)
+            </Typography>
           </Typography>
           <Container className={classes.links}>
-            <Link href="https://github.com/jetlaglabs" color="inherit">
-              Source
+            <Link 
+                href="https://github.com/jetlaglabs/gltfviewer" 
+                color="inherit"
+                target="_blank"
+                rel="noopener"
+              >
+              Code
+            </Link>
+            <Link 
+              href="http://roestudios.co.uk/project/3d-pokemon-models/025-pikachu/" 
+              color="inherit"
+              target="_blank"
+              rel="noopener"
+            >
+              Pikachu
             </Link>
             <IconButton edge="start" className={classes.lightDarkToggle} color="inherit" aria-label="menu" onClick={() => toggleLightMode()}>
               {lightMode && <DarkIcon />}

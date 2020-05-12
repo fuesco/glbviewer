@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { ModelViewer } from '../components'
-import { TopNav, Clock } from '../shared/components'
+import { TopNav } from '../shared/components'
 import FileUploader from '../components/FileUploader'
 
 
@@ -23,7 +23,6 @@ export const App = () => {
   return (
     <div className={classes.root}>
       <TopNav onLightToggle={() => setLightMode(!!!lightMode)}/>
-      <Clock />
       <FileUploader onUpload={onModelUpload}/>
       <ModelViewer src={modelSrc} className="AstronautModel" light={lightMode}/>
     </div>

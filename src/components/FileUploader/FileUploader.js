@@ -6,7 +6,7 @@ import {useDropzone} from 'react-dropzone'
  
 const useStyles = makeStyles(theme => ({
   root: {
-      paddingBottom: '2em',
+      paddingTop: '5rem',
   },
   dropPaper: {
       padding: '1em 2em',
@@ -50,7 +50,7 @@ function FileUploader(props) {
         {
           isDragActive ?
             <p>Drop the files here ...</p> :
-            <p>Drag 'n' drop glTF files here, or click to select.</p>
+            <p>Drag 'n' drop a glTF file here, or click to select one.</p>
         }
         <aside>
           {loading && <h3>Loading...</h3>}
