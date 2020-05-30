@@ -9,7 +9,7 @@ import FileUploader from '../components/FileUploader'
 
 export const App = () => {
   const [lightMode, setLightMode] = useState(false)
-  const [modelSrc, setModelSrc] = useState('https://jetlaglabs.github.io/assets/model/pikachu.glb')
+  const [modelSrc, setModelSrc] = useState('https://fuesco.github.io/assets/model/pikachu.glb')
   const useStyles = makeStyles(theme => ({
     root: {
        backgroundColor: lightMode?'#FFFFFF':'#222222',
