@@ -9,7 +9,7 @@ import FileUploader from '../components/FileUploader'
 
 export const App = () => {
   const [lightMode, setLightMode] = useState(false)
-  const [modelSrc, setModelSrc] = useState('https://fuesco.github.io/assets/model/pikachu.glb')
+  const [modelSrc, setModelSrc] = useState('./pikachu.glb')
   const useStyles = makeStyles(theme => ({
     root: {
        backgroundColor: lightMode?'#FFFFFF':'#222222',
@@ -20,9 +20,12 @@ export const App = () => {
   const onModelUpload = (newSrc) => {
     setModelSrc(newSrc)
   }
+  const onModelChange = (newSrc) => {
+    setModelSrc(newSrc)
+  }
   return (
     <div className={classes.root}>
-      <TopNav onLightToggle={() => setLightMode(!!!lightMode)}/>
+      <TopNav onLightToggle={() => setLightMode(!!!lightMode)} onModelToggle={(newSource) => onModelChange(newSource)}/>
       <FileUploader onUpload={onModelUpload}/>
       <ModelViewer src={modelSrc} className="AstronautModel" light={lightMode}/>
     </div>

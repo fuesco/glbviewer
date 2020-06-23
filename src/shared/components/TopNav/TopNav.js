@@ -4,16 +4,17 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import LightIcon from '@material-ui/icons/WbSunnyTwoTone';
 import DarkIcon from '@material-ui/icons/NightsStayTwoTone';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 
 export default function TopNav(props) {
   const [lightMode, setLightMode] = useState(false);
-  const { onLightToggle } = props
+  const { onLightToggle, onModelToggle } = props
   /*
   const preventDefault = event => event.preventDefault();
   */
@@ -32,11 +33,15 @@ export default function TopNav(props) {
     links: {
       flexGrow: 1,
       display: 'flex',
-      justifyContent: 'flex-end',
+      justifyContent: 'flex-start',
       alignItems: 'center',
-      columnGap: theme.spacing(2),
+    },
+    link: {
+      marginRight: theme.spacing(2),
     },
     lightDarkToggle: {
+      flex: 1,
+      justifyContent: 'flex-end',
 
     }
   }));
@@ -45,36 +50,47 @@ export default function TopNav(props) {
     setLightMode(!!!lightMode);
     onLightToggle();
   }
+  const isMobile = useMediaQuery('(max-width:800px)');
   return (
     <div className={classes.root}>
       <AppBar className={classes.bar} position="fixed">
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6">
+          {isMobile && (
+            <IconButton edge="start" color="inherit" aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+          )}
+          <Typography variant="overline">
             glTFViewer
-            <Typography variant="overline">
-              (0.0.2)
-            </Typography>
           </Typography>
           <Container className={classes.links}>
-            <Link 
-                href="https://github.com/jetlaglabs/gltfviewer" 
-                color="inherit"
-                target="_blank"
-                rel="noopener"
-              >
-              Code
-            </Link>
-            <Link 
-              href="http://roestudios.co.uk/project/3d-pokemon-models/025-pikachu/" 
-              color="inherit"
-              target="_blank"
-              rel="noopener"
-            >
-              Pikachu
-            </Link>
+            {!isMobile && (
+              <div>
+                <Button 
+                  color="inherit"
+                  className={classes.link}
+                  onClick={() => onModelToggle('./astronaut.glb')}
+                >
+                  Astronaut
+                </Button>
+                <Button 
+                  color="inherit"
+                  className={classes.link}
+                  onClick={() => onModelToggle('./pikachu.glb')}
+                >
+                  Pikachu
+                </Button>
+                <Button
+                    variant="contained" 
+                    href="https://github.com/fuesco/gltfviewer" 
+                    target="_blank"
+                    rel="noopener"
+                    className={classes.link}
+                  >
+                  Code
+                </Button>
+              </div>
+            )}
             <IconButton edge="start" className={classes.lightDarkToggle} color="inherit" aria-label="menu" onClick={() => toggleLightMode()}>
               {lightMode && <DarkIcon />}
               {!lightMode && <LightIcon />}

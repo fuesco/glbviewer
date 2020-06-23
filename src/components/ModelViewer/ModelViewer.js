@@ -20,7 +20,7 @@ const ModelViewer = props => {
 }
 
 ModelViewer.defaultProps = {
-  src: 'https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?1542147958948'
+  src: './pikachu.glb'
 }
 
 export default ModelViewer
