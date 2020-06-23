@@ -35,14 +35,15 @@ export default function TopNav(props) {
       display: 'flex',
       justifyContent: 'flex-start',
       alignItems: 'center',
+      order: 4,
     },
     link: {
       marginRight: theme.spacing(2),
     },
     lightDarkToggle: {
       flex: 1,
+      display: 'flex',
       justifyContent: 'flex-end',
-
     }
   }));
   const classes = useStyles();
@@ -91,10 +92,12 @@ export default function TopNav(props) {
                 </Button>
               </div>
             )}
-            <IconButton edge="start" className={classes.lightDarkToggle} color="inherit" aria-label="menu" onClick={() => toggleLightMode()}>
-              {lightMode && <DarkIcon />}
-              {!lightMode && <LightIcon />}
-            </IconButton>
+            <div className={classes.lightDarkToggle}>
+              <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => toggleLightMode()}>
+                {lightMode && <DarkIcon />}
+                {!lightMode && <LightIcon />}
+              </IconButton>
+            </div>
           </Container>
         </Toolbar>
       </AppBar>
