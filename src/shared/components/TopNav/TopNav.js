@@ -10,7 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import LightIcon from '@material-ui/icons/WbSunnyTwoTone';
 import DarkIcon from '@material-ui/icons/NightsStayTwoTone';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-
+import Clock from '../Clock';
 
 export default function TopNav(props) {
   const [lightMode, setLightMode] = useState(false);
@@ -62,11 +62,21 @@ export default function TopNav(props) {
             </IconButton>
           )}
           <Typography variant="overline">
-            glTFViewer
+            glTFViewer&ordm;(0.1.0)
           </Typography>
+          <Clock/>
           <Container className={classes.links}>
             {!isMobile && (
               <div>
+                <Button 
+                  color="inherit"
+                  className={classes.link}
+                  href="https://github.com/fuesco/gltfviewer/blob/master/README.md" 
+                  target="_blank"
+                  rel="noopener"
+                >
+                  About
+                </Button>
                 <Button 
                   color="inherit"
                   className={classes.link}
@@ -88,7 +98,7 @@ export default function TopNav(props) {
                     rel="noopener"
                     className={classes.link}
                   >
-                  Code
+                  Source
                 </Button>
               </div>
             )}

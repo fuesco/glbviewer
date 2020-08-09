@@ -2,6 +2,11 @@
 
 Drag-and-drop preview tool for glTF(.glb) 3D models.
 
+### Credits
+
+- [Pikachu 3D Model](http://roestudios.co.uk/project/3d-pokemon-models/025-pikachu/)
+- [Astronaut Model](https://github.com/google/model-viewer)
+
 In the project directory, you can run:
 
 ### `npm start`
@@ -25,7 +30,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-### Credits
-
-- [Pikachu 3D Model](http://roestudios.co.uk/project/3d-pokemon-models/025-pikachu/)
-- [Astronaut Model](https://github.com/google/model-viewer)

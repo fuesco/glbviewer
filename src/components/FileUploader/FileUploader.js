@@ -50,7 +50,7 @@ function FileUploader(props) {
         {
           isDragActive ?
             <p>Drop the files here ...</p> :
-            <p>Drag 'n' drop a glTF file here, or click to select one.</p>
+            <p>Drop a glTF(*.glb) file here, or click to select one.</p>
         }
         <aside>
           {loading && <h3>Loading...</h3>}
