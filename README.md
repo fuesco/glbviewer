@@ -2,7 +2,7 @@
 
 Drag-and-drop 3D (.glb) preview tool.
 
-Visit [glbviewer](https://glbviewer.fues.us/)
+Visit [glbviewer](https://glb.fues.us/)
 
 ### Model Credits
 
