@@ -7,8 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import LightIcon from '@material-ui/icons/WbSunnyTwoTone';
-import DarkIcon from '@material-ui/icons/NightsStayTwoTone';
+import LightIcon from '@material-ui/icons/BrightnessHighTwoTone';
+import DarkIcon from '@material-ui/icons/BrightnessLowTwoTone';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Clock from '../Clock';
 
@@ -61,10 +61,16 @@ export default function TopNav(props) {
               <MenuIcon />
             </IconButton>
           )}
-          <Typography variant="overline">
-            glTFViewer&ordm;(0.1.0)
+          <Typography variant="h6">
+            glbviewer<Typography variant="overline">(1.0.1)</Typography>
           </Typography>
           <Clock/>
+          <div className={classes.lightDarkToggle}>
+            <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => toggleLightMode()}>
+              {lightMode && <DarkIcon />}
+              {!lightMode && <LightIcon />}
+            </IconButton>
+          </div>
           <Container className={classes.links}>
             {!isMobile && (
               <div>
@@ -102,12 +108,6 @@ export default function TopNav(props) {
                 </Button>
               </div>
             )}
-            <div className={classes.lightDarkToggle}>
-              <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => toggleLightMode()}>
-                {lightMode && <DarkIcon />}
-                {!lightMode && <LightIcon />}
-              </IconButton>
-            </div>
           </Container>
         </Toolbar>
       </AppBar>
