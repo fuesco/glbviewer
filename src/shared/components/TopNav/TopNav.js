@@ -4,13 +4,12 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import LightIcon from '@material-ui/icons/BrightnessHighTwoTone';
 import DarkIcon from '@material-ui/icons/BrightnessLowTwoTone';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import Clock from '../Clock';
+import Fink from '../../../components/Fink';
 
 export default function TopNav(props) {
   const [lightMode, setLightMode] = useState(false);
@@ -31,19 +30,13 @@ export default function TopNav(props) {
       
     },
     links: {
-      flexGrow: 1,
       display: 'flex',
-      justifyContent: 'flex-start',
-      alignItems: 'center',
-      order: 4,
-    },
-    link: {
-      marginRight: theme.spacing(2),
-    },
-    lightDarkToggle: {
-      flex: 1,
-      display: 'flex',
+      flexDirection: 'row',
       justifyContent: 'flex-end',
+      alignItems: 'center',
+    },
+    grow: {
+      flex: 1,
     }
   }));
   const classes = useStyles();
@@ -61,54 +54,28 @@ export default function TopNav(props) {
               <MenuIcon />
             </IconButton>
           )}
-          <Typography variant="h6">
-            glbviewer<Typography variant="overline">(1.0.1)</Typography>
+          <Typography variant="overline" className={classes.grow}>
+            glbviewer<sub>&nbsp;(0.1.0)</sub>
           </Typography>
-          <Clock/>
-          <div className={classes.lightDarkToggle}>
-            <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => toggleLightMode()}>
-              {lightMode && <DarkIcon />}
-              {!lightMode && <LightIcon />}
-            </IconButton>
-          </div>
-          <Container className={classes.links}>
-            {!isMobile && (
-              <div>
-                <Button 
-                  color="inherit"
-                  className={classes.link}
-                  href="https://github.com/fuesco/gltfviewer/blob/master/README.md" 
-                  target="_blank"
-                  rel="noopener"
-                >
-                  About
-                </Button>
-                <Button 
-                  color="inherit"
-                  className={classes.link}
-                  onClick={() => onModelToggle('./astronaut.glb')}
-                >
-                  Astronaut
-                </Button>
-                <Button 
-                  color="inherit"
-                  className={classes.link}
-                  onClick={() => onModelToggle('./pikachu.glb')}
-                >
-                  Pikachu
-                </Button>
-                <Button
-                    variant="contained" 
-                    href="https://github.com/fuesco/gltfviewer" 
-                    target="_blank"
-                    rel="noopener"
-                    className={classes.link}
-                  >
-                  Source
-                </Button>
-              </div>
-            )}
-          </Container>
+          {!isMobile && (
+            <Container className={classes.links}>
+              <Fink
+                name="about"
+              />
+              <Fink
+                name="astronaut"
+                action={() => onModelToggle('./astronaut.glb')}
+              />
+              <Fink
+                name="pikachu"
+                action={() => onModelToggle('./pikachu.glb')}
+              />
+              <IconButton color="inherit" aria-label="menu" onClick={() => toggleLightMode()}>
+                {lightMode && <DarkIcon />}
+                {!lightMode && <LightIcon />}
+              </IconButton>
+            </Container>
+          )}
         </Toolbar>
       </AppBar>
     </div>
