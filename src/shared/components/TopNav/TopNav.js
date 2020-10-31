@@ -37,6 +37,15 @@ export default function TopNav(props) {
     },
     grow: {
       flex: 1,
+      fontFamily: 'IBM Plex Sans Condensed',
+      textTransform: 'uppercase',
+      fontWeight: 700,
+      fontStyle: 'italic',
+    },
+    version: {
+      fontWeight: 400,
+      fontSize: '12px',
+      fontStyle: 'normal',
     }
   }));
   const classes = useStyles();
@@ -54,8 +63,8 @@ export default function TopNav(props) {
               <MenuIcon />
             </IconButton>
           )}
-          <Typography variant="overline" className={classes.grow}>
-            glbviewer<sub>&nbsp;(0.1.0)</sub>
+          <Typography variant="h6" className={classes.grow}>
+            glbviewer<sub className={classes.version}>&nbsp;(0.1.0)</sub>
           </Typography>
           {!isMobile && (
             <Container className={classes.links}>

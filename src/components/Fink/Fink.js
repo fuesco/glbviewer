@@ -14,9 +14,9 @@ const Fink = (props) => {
     link: {
       // width: theme.spacing(12),
       // height: theme.spacing(4),
-      fontSize: '14px',
-      fontWeight: 500,
-      borderColor: '#6d6e70',
+      fontFamily: 'IBM Plex Sans Condensed',
+      fontSize: '12px',
+      fontWeight: 700,
       color: filled? '#333333': "inherit",
       textDecoration: 'none',
       '&:hover': {
