@@ -11,7 +11,8 @@ const ModelViewer = props => {
                     shadow-intensity="1"
                     camera-controls
                     ar
-                    camera-orbit="180deg 75deg 100%"
+                    camera-orbit="45deg 75deg auto"
+                    exposure={0.8}
                     interaction-prompt="auto"
                     auto-rotate>
       </model-viewer>
