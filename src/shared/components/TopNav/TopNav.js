@@ -72,6 +72,10 @@ export default function TopNav(props) {
                 name="about"
               />
               <Fink
+                name="series x"
+                action={() => onModelToggle('https://cdn.cnetcontent.com/syndication/mediaserverredirect/b7755e7453f7e1d09299f8e16d0d7500/original.glb')}
+              />
+              <Fink
                 name="astronaut"
                 action={() => onModelToggle('./astronaut.glb')}
               />
