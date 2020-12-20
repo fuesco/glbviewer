@@ -10,7 +10,8 @@ const useStyles = makeStyles(theme => ({
   },
   dropPaper: {
       padding: '1em 2em',
-      border: '3px dashed #b7b7b7'
+      border: '3px dashed #b7b7b7',
+      boxShadow: 'rgba(17, 0, 102, 0.16) 0px 16px 20px',
   },
 }));
 const getBase64 =(file) => {

@@ -6,8 +6,8 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import LightIcon from '@material-ui/icons/BrightnessHighTwoTone';
-import DarkIcon from '@material-ui/icons/BrightnessLowTwoTone';
+import LightIcon from '@material-ui/icons/Brightness1Sharp';
+import DarkIcon from '@material-ui/icons/Brightness2Sharp';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Fink from '../../../components/Fink';
 
@@ -41,11 +41,16 @@ export default function TopNav(props) {
       textTransform: 'uppercase',
       fontWeight: 700,
       fontStyle: 'italic',
+      fontSize: 14,
     },
     version: {
       fontWeight: 400,
-      fontSize: '12px',
       fontStyle: 'normal',
+      fontSize: 10,
+      '& a': {
+        color: theme.palette.primary.contrastText,
+        textDecoration: 'none'
+      }
     }
   }));
   const classes = useStyles();
@@ -64,7 +69,7 @@ export default function TopNav(props) {
             </IconButton>
           )}
           <Typography variant="h6" className={classes.grow}>
-            glbviewer<sub className={classes.version}>&nbsp;(0.1.0)</sub>
+            GLBViewer<sub className={classes.version}><a href="https://github.com/fuesorg/glbviewer" target="_blank" rel="noopener noreferrer">0.0.1</a></sub>
           </Typography>
           {!isMobile && (
             <Container className={classes.links}>
@@ -76,12 +81,12 @@ export default function TopNav(props) {
                 action={() => onModelToggle('https://cdn.cnetcontent.com/syndication/mediaserverredirect/b7755e7453f7e1d09299f8e16d0d7500/original.glb')}
               />
               <Fink
-                name="astronaut"
-                action={() => onModelToggle('./astronaut.glb')}
-              />
-              <Fink
                 name="pikachu"
                 action={() => onModelToggle('./pikachu.glb')}
+              />
+              <Fink
+                name="astronaut"
+                action={() => onModelToggle('./astronaut.glb')}
               />
               <IconButton color="inherit" aria-label="menu" onClick={() => toggleLightMode()}>
                 {lightMode && <DarkIcon />}

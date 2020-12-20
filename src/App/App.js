@@ -9,7 +9,7 @@ import FileUploader from '../components/FileUploader'
 
 export const App = () => {
   const [lightMode, setLightMode] = useState(false)
-  const [modelSrc, setModelSrc] = useState('https://cdn.cnetcontent.com/syndication/mediaserverredirect/b7755e7453f7e1d09299f8e16d0d7500/original.glb')
+  const [modelSrc, setModelSrc] = useState('./astronaut.glb')
   const useStyles = makeStyles(theme => ({
     root: {
        backgroundColor: lightMode?'#FFFFFF':'#222222',
