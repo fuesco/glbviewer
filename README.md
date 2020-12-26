@@ -1,18 +1,32 @@
-# glbviewer
+<h1 align="center">
+  glbviewer
+</h1>
+<p align="center">
+  Drag n' drop preview tool for (.glb) 3D models.
+</p>
 
-Drag-and-drop 3D (.glb) preview tool.
+<p align="center">
+  <a href="https://app.netlify.com/sites/glbviewer/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/8298d1fd-c378-405c-a00c-92a08fcb17c2/deploy-status" alt="netlify deploy status" />
+  </a>
+  <a href="https://github.com/fuesorg/glbviewer/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="The glbviewer project is released under the MIT license." />
+  </a>
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
+</p>
 
-Visit [glbviewer](https://glb.fues.us/)
+---
 
-### Model Credits
+### GLB Assets
 
-- [Pikachu 3D Model](http://roestudios.co.uk/project/3d-pokemon-models/025-pikachu/)
-- [Astronaut Model](https://github.com/google/model-viewer)
+- [astronaut.glb](https://github.com/google/model-viewer)
+- [xboxsx.glb](http://roestudios.co.uk/project/3d-pokemon-models/025-pikachu/)
+- [pikachu.glb](http://roestudios.co.uk/project/3d-pokemon-models/025-pikachu/)
 
-### Site Credits
+### Technologies
 
-- [Material UI](https://material-ui.com/)
-- [React](https://reactjs.org/)
+- [Material-UI](https://material-ui.com/)
+- [create-react-app](https://reactjs.org/)
 - [Netlify](https://www.netlify.com/)
 
 In the project directory, you can run:
