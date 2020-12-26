@@ -14,7 +14,8 @@ const Fink = (props) => {
     link: {
       // width: theme.spacing(12),
       // height: theme.spacing(4),
-      fontFamily: 'IBM Plex Sans Condensed',
+      fontFamily: "IBM Plex Mono",
+      textTransform: 'uppercase',
       fontSize: '12px',
       fontWeight: 700,
       color: filled? '#333333': "inherit",

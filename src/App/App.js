@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { ModelViewer } from '../components'
-import { TopNav } from '../shared/components'
+import Grid from '@material-ui/core/Grid'
+import { ModelViewer, SwitchControls } from '../components'
+import { TopNav, Clock } from '../shared/components'
 import FileUploader from '../components/FileUploader'
 
 
@@ -12,8 +13,15 @@ export const App = () => {
   const [modelSrc, setModelSrc] = useState('./astronaut.glb')
   const useStyles = makeStyles(theme => ({
     root: {
-       backgroundColor: lightMode?'#FFFFFF':'#222222',
+       backgroundColor: lightMode?'#FFFFFF':'#111111',
        textAlign: 'center',
+       color: lightMode? '#111111': '#f1f1f1',
+       minHeight: '100vh',
+       overflow: 'hidden',
+    },
+    content: {
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   }));
   const classes = useStyles();
@@ -26,8 +34,16 @@ export const App = () => {
   return (
     <div className={classes.root}>
       <TopNav onLightToggle={() => setLightMode(!!!lightMode)} onModelToggle={(newSource) => onModelChange(newSource)}/>
-      <FileUploader onUpload={onModelUpload}/>
-      <ModelViewer src={modelSrc} className="AstronautModel" light={lightMode}/>
+      <FileUploader onUpload={onModelUpload} activeModel={modelSrc} />
+      <Clock lightMode/>
+      <Grid container spacing={1} className={classes.content}>
+        <Grid item>
+          <SwitchControls/>
+        </Grid>
+        <Grid item md={8}>
+          <ModelViewer src={modelSrc} className="AstronautModel" light={lightMode}/>
+        </Grid>
+      </Grid>
     </div>
   );
 }

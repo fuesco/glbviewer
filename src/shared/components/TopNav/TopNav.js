@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
 import MenuIcon from '@material-ui/icons/Menu';
 import LightIcon from '@material-ui/icons/Brightness1Sharp';
 import DarkIcon from '@material-ui/icons/Brightness2Sharp';
@@ -23,8 +24,8 @@ export default function TopNav(props) {
       flexGrow: 1,
     },
     bar: {
-      backgroundColor: lightMode?'#FFFFFF':'#222222',
-      color: lightMode?'#222222':'#ffffff',
+      backgroundColor: lightMode?'#f1f1f1':'#222222',
+      color: lightMode?'#222222':'#f1f1f1',
     },
     menuButton: {
       
@@ -37,18 +38,17 @@ export default function TopNav(props) {
     },
     grow: {
       flex: 1,
-      fontFamily: 'IBM Plex Sans Condensed',
+      fontFamily: "IBM Plex Mono",
       textTransform: 'uppercase',
       fontWeight: 700,
-      fontStyle: 'italic',
-      fontSize: 14,
+      fontSize: 20,
+      letterSpacing: theme.spacing(1/4),
     },
     version: {
       fontWeight: 400,
-      fontStyle: 'normal',
-      fontSize: 10,
+      fontSize: 12,
       '& a': {
-        color: theme.palette.primary.contrastText,
+        color: lightMode? '#111111': '#f1f1f1',
         textDecoration: 'none'
       }
     }
@@ -69,7 +69,7 @@ export default function TopNav(props) {
             </IconButton>
           )}
           <Typography variant="h6" className={classes.grow}>
-            GLBViewer<sub className={classes.version}><a href="https://github.com/fuesorg/glbviewer" target="_blank" rel="noopener noreferrer">0.0.1</a></sub>
+            glbviewer<sub className={classes.version}><a href="https://github.com/fuesorg/glbviewer" target="_blank" rel="noopener noreferrer">{process.env.REACT_APP_VERSION}</a></sub>
           </Typography>
           {!isMobile && (
             <Container className={classes.links}>
@@ -88,10 +88,12 @@ export default function TopNav(props) {
                 name="astronaut"
                 action={() => onModelToggle('./astronaut.glb')}
               />
-              <IconButton color="inherit" aria-label="menu" onClick={() => toggleLightMode()}>
-                {lightMode && <DarkIcon />}
-                {!lightMode && <LightIcon />}
-              </IconButton>
+              <Tooltip title="Toggle theme">
+                <IconButton color="inherit" aria-label="menu" onClick={() => toggleLightMode()}>
+                  {lightMode && <DarkIcon />}
+                  {!lightMode && <LightIcon />}
+                </IconButton>
+              </Tooltip>
             </Container>
           )}
         </Toolbar>

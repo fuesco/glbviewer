@@ -7,6 +7,8 @@ import {useDropzone} from 'react-dropzone'
 const useStyles = makeStyles(theme => ({
   root: {
       paddingTop: '5rem',
+      fontFamily: 'IBM Plex Mono, monospace',
+      fontSize: 12,
   },
   dropPaper: {
       padding: '1em 2em',
@@ -25,7 +27,7 @@ const getBase64 =(file) => {
 }
 function FileUploader(props) {
   const classes = useStyles(); 
-  const { onUpload } = props
+  const { onUpload, activeModel } = props
   const [files, setFiles] = useState([])
   const [loading, setLoading] = useState(false)
   const onDrop = useCallback(acceptedFiles => {
@@ -51,11 +53,12 @@ function FileUploader(props) {
         {
           isDragActive ?
             <p>Drop the files here ...</p> :
-            <p>Drop a glTF(*.glb) file here, or click to select one.</p>
+            <p>Drop a glTF(*.glb) file here, or click the box to select one.</p>
         }
         <aside>
           {loading && <h3>Loading...</h3>}
           <h4>Model:</h4>
+          <p>{activeModel.split('/').slice(-1)}</p>
           <ul>{files}</ul>
         </aside>
       </Paper>
