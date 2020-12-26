@@ -13,7 +13,7 @@ export const App = () => {
   const [modelSrc, setModelSrc] = useState('./astronaut.glb')
   const useStyles = makeStyles(theme => ({
     root: {
-       backgroundColor: lightMode?'#FFFFFF':'#111111',
+       backgroundColor: lightMode?'#f1f1f1':'#111111',
        textAlign: 'center',
        color: lightMode? '#111111': '#f1f1f1',
        minHeight: '100vh',
