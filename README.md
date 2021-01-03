@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="./f-sharp-light.svg" alt="fues us logo" height="55px" />
+</p> 
 <h1 align="center">
   glbviewer
 </h1>
@@ -6,13 +9,13 @@
 </p>
 
 <p align="center">
-  <a href="https://app.netlify.com/sites/glbviewer/deploys">
-    <img src="https://api.netlify.com/api/v1/badges/8298d1fd-c378-405c-a00c-92a08fcb17c2/deploy-status" alt="netlify deploy status" />
-  </a>
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
   <a href="https://github.com/fuesorg/glbviewer/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="The glbviewer project is released under the MIT license." />
   </a>
-  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
+   <a href="https://app.netlify.com/sites/glbviewer/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/8298d1fd-c378-405c-a00c-92a08fcb17c2/deploy-status" alt="netlify deploy status" />
+  </a>
 </p>
 
 ---

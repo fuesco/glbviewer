@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
       padding: '1em 2em',
       border: '3px dashed #b7b7b7',
       boxShadow: 'rgba(17, 0, 102, 0.16) 0px 16px 20px',
-  },
+  }
 }));
 const getBase64 =(file) => {
   return new Promise(function(resolve) {
@@ -53,7 +53,7 @@ function FileUploader(props) {
         {
           isDragActive ?
             <p>Drop the files here ...</p> :
-            <p>Drop a glTF(*.glb) file here, or click the box to select one.</p>
+            <p>Drop a binary glTF(*.glb) file here, or click the box to select one.</p>
         }
         <aside>
           {loading && <h3>Loading...</h3>}

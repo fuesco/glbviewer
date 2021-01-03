@@ -7,10 +7,11 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import MenuIcon from '@material-ui/icons/Menu';
-import LightIcon from '@material-ui/icons/Brightness1Sharp';
-import DarkIcon from '@material-ui/icons/Brightness2Sharp';
+import SunIcon from '@material-ui/icons/Brightness1Sharp';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Fink from '../../../components/Fink';
+import fuesDarkSvg from '../../static/f-sharp-dark.svg';
+import fuesLightSvg from '../../static/f-sharp-light.svg';
 
 export default function TopNav(props) {
   const [lightMode, setLightMode] = useState(false);
@@ -37,12 +38,17 @@ export default function TopNav(props) {
       alignItems: 'center',
     },
     grow: {
+      display: 'flex',
       flex: 1,
+      justifyContent: 'flex-start',
+      alignItems: 'center',
       fontFamily: "IBM Plex Mono",
       textTransform: 'uppercase',
       fontWeight: 700,
-      fontSize: 20,
-      letterSpacing: theme.spacing(1/4),
+      fontSize: 16,
+      '& img': {
+        marginRight: theme.spacing(1),
+      }
     },
     version: {
       fontWeight: 400,
@@ -50,7 +56,8 @@ export default function TopNav(props) {
       '& a': {
         color: lightMode? '#111111': '#f1f1f1',
         textDecoration: 'none'
-      }
+      },
+      alignSelf: 'flex-end',
     }
   }));
   const classes = useStyles();
@@ -69,6 +76,7 @@ export default function TopNav(props) {
             </IconButton>
           )}
           <Typography variant="h6" className={classes.grow}>
+            <img src={lightMode? fuesLightSvg: fuesDarkSvg} height="28px" alt="fues us logo"/>
             glbviewer<sub className={classes.version}><a href="https://github.com/fuesorg/glbviewer" target="_blank" rel="noopener noreferrer">{process.env.REACT_APP_VERSION}</a></sub>
           </Typography>
           {!isMobile && (
@@ -90,8 +98,7 @@ export default function TopNav(props) {
               />
               <Tooltip title="Toggle theme">
                 <IconButton color="inherit" aria-label="menu" onClick={() => toggleLightMode()}>
-                  {lightMode && <DarkIcon />}
-                  {!lightMode && <LightIcon />}
+                  <SunIcon />
                 </IconButton>
               </Tooltip>
             </Container>
