@@ -10,8 +10,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SunIcon from '@material-ui/icons/Brightness1Sharp';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Fink from '../../../components/Fink';
-import fuesDarkSvg from '../../static/f-sharp-dark.svg';
-import fuesLightSvg from '../../static/f-sharp-light.svg';
+import fuesDarkSvg from '../../static/fues-brand-dark.svg';
+import fuesLightSvg from '../../static/fues-brand.svg';
 
 export default function TopNav(props) {
   const [lightMode, setLightMode] = useState(false);
@@ -45,7 +45,7 @@ export default function TopNav(props) {
       fontFamily: "IBM Plex Mono",
       textTransform: 'uppercase',
       fontWeight: 700,
-      fontSize: 16,
+      fontSize: 14,
       '& img': {
         marginRight: theme.spacing(1),
       }
@@ -76,7 +76,7 @@ export default function TopNav(props) {
             </IconButton>
           )}
           <Typography variant="h6" className={classes.grow}>
-            <img src={lightMode? fuesLightSvg: fuesDarkSvg} height="28px" alt="fues us logo"/>
+            <img src={lightMode? fuesLightSvg: fuesDarkSvg} width="64px" alt="fuesvc logo"/>
             glbviewer<sub className={classes.version}><a href="https://github.com/fuesorg/glbviewer" target="_blank" rel="noopener noreferrer">{process.env.REACT_APP_VERSION}</a></sub>
           </Typography>
           {!isMobile && (

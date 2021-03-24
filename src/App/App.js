@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
-import { ModelViewer, SwitchControls } from '../components'
+import { ModelViewer } from '../components'
 import { TopNav, Clock } from '../shared/components'
 import FileUploader from '../components/FileUploader'
 
@@ -38,7 +38,6 @@ export const App = () => {
       <Clock lightMode/>
       <Grid container spacing={1} className={classes.content}>
         <Grid item>
-          <SwitchControls/>
         </Grid>
         <Grid item md={8}>
           <ModelViewer src={modelSrc} className="AstronautModel" light={lightMode}/>

@@ -1,5 +1,5 @@
 import React from 'react'
-import '@google/model-viewer'
+// import '@google/model-viewer'
 import styles from './ModelViewer.module.css'
 
 const ModelViewer = props => {
